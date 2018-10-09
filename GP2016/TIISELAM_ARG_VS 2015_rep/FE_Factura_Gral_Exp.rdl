@@ -5,7 +5,7 @@
     <DataSource Name="GP">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>=2Data Source=TESTAPPGPX1\DYNGPARG;Initial Catalog="+ Parameters!BASE.Value+";Integrated Security=True"</ConnectString>
+        <ConnectString>="Data Source=TESTAPPGPX1\DYNGPARG;Initial Catalog="+ Parameters!BASE.Value+";Integrated Security=True"</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
@@ -27,7 +27,7 @@
         <CommandText>SELECT  1 orden,
             'ORIGINAL' COPIA
         ,FE.*
-FROM GXPR_FC_ELECTRONICA FE
+FROM GXPR_FC_ELECTRONICA_EXP FE
 WHERE 
 NRO_FACTURA = @NRO_FACTURA
     AND TIPO_FACTURA = @TIPO_FACTURA
@@ -35,7 +35,7 @@ union all
 SELECT 2 orden,
    'DUPLICADO' COPIA
         ,FE.*
-FROM GXPR_FC_ELECTRONICA FE
+FROM GXPR_FC_ELECTRONICA_EXP FE
 WHERE
  NRO_FACTURA = @NRO_FACTURA
       AND TIPO_FACTURA = @TIPO_FACTURA
@@ -43,7 +43,7 @@ union all
 SELECT 3 orden,
    'TRIPLICADO' COPIA
         ,FE.*
-FROM GXPR_FC_ELECTRONICA FE
+FROM GXPR_FC_ELECTRONICA_EXP FE
 WHERE
  NRO_FACTURA = @NRO_FACTURA
       AND TIPO_FACTURA = @TIPO_FACTURA
@@ -287,6 +287,22 @@ order by NRO_FACTURA,orden</CommandText>
           <DataField>QUANTITY</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="CMPADRESS_1">
+          <DataField>CMPADRESS_1</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="curncd">
+          <DataField>curncd</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="ORTDISAM">
+          <DataField>ORTDISAM</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="pais">
+          <DataField>pais</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -303,7 +319,7 @@ order by NRO_FACTURA,orden</CommandText>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.59669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -354,7 +370,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>2.53633cm</Height>
+                  <Height>2.14218cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -373,7 +389,7 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>2.53633cm</Height>
+                                <Height>2.14218cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -386,7 +402,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           </TablixColumns>
                                           <TablixRows>
                                             <TablixRow>
-                                              <Height>2.05633cm</Height>
+                                              <Height>1.70953cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -409,7 +425,7 @@ order by NRO_FACTURA,orden</CommandText>
                                               </TablixCells>
                                             </TablixRow>
                                             <TablixRow>
-                                              <Height>0.48cm</Height>
+                                              <Height>0.43266cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -477,7 +493,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           </TablixColumns>
                                           <TablixRows>
                                             <TablixRow>
-                                              <Height>1.84091cm</Height>
+                                              <Height>1.70953cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -524,14 +540,13 @@ order by NRO_FACTURA,orden</CommandText>
                                                       </Style>
                                                     </Textbox>
                                                     <ColSpan>2</ColSpan>
-                                                    <rd:Selected>true</rd:Selected>
                                                   </CellContents>
                                                 </TablixCell>
                                                 <TablixCell />
                                               </TablixCells>
                                             </TablixRow>
                                             <TablixRow>
-                                              <Height>0.21542cm</Height>
+                                              <Height>0.08404cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -598,7 +613,7 @@ order by NRO_FACTURA,orden</CommandText>
                                               </TablixCells>
                                             </TablixRow>
                                             <TablixRow>
-                                              <Height>0.48cm</Height>
+                                              <Height>0.34862cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -698,7 +713,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           </TablixColumns>
                                           <TablixRows>
                                             <TablixRow>
-                                              <Height>1.57633cm</Height>
+                                              <Height>1.14439cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -709,9 +724,9 @@ order by NRO_FACTURA,orden</CommandText>
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=IIF( First(Fields!TIPO_FACTURA.Value, "Cabecera_FACTURA") =4, "NOTA DE CRÉDITO",IIF( First(Fields!DOCID.Value, "Cabecera_FACTURA") ="ND", "NOTA DE DÉBITO","FACTURA "))+" DE EXPORTACIÓN"</Value>
+                                                              <Value>=IIF( First(Fields!TIPO_FACTURA.Value, "Cabecera_FACTURA") =4, "NOTA DE CRÉDITO",IIF( First(Fields!DOCID.Value, "Cabecera_FACTURA") ="ND", "NOTA DE DÉBITO","FACTURA"))+" DE EXPORTACIÓN"</Value>
                                                               <Style>
-                                                                <FontSize>18pt</FontSize>
+                                                                <FontSize>16pt</FontSize>
                                                                 <FontWeight>Bold</FontWeight>
                                                               </Style>
                                                             </TextRun>
@@ -736,7 +751,7 @@ order by NRO_FACTURA,orden</CommandText>
                                               </TablixCells>
                                             </TablixRow>
                                             <TablixRow>
-                                              <Height>0.48cm</Height>
+                                              <Height>0.4989cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -761,7 +776,7 @@ order by NRO_FACTURA,orden</CommandText>
                                                         </TablixColumns>
                                                         <TablixRows>
                                                           <TablixRow>
-                                                            <Height>0.48cm</Height>
+                                                            <Height>0.4989cm</Height>
                                                             <TablixCells>
                                                               <TablixCell>
                                                                 <CellContents>
@@ -783,70 +798,6 @@ order by NRO_FACTURA,orden</CommandText>
                                                                     <Style>
                                                                       <Border>
                                                                         <Color>LightGrey</Color>
-                                                                        <Style>None</Style>
-                                                                      </Border>
-                                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                                      <PaddingRight>2pt</PaddingRight>
-                                                                      <PaddingTop>2pt</PaddingTop>
-                                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                                    </Style>
-                                                                  </Textbox>
-                                                                </CellContents>
-                                                              </TablixCell>
-                                                              <TablixCell>
-                                                                <CellContents>
-                                                                  <Textbox Name="Textbox226">
-                                                                    <CanGrow>true</CanGrow>
-                                                                    <KeepTogether>true</KeepTogether>
-                                                                    <Paragraphs>
-                                                                      <Paragraph>
-                                                                        <TextRuns>
-                                                                          <TextRun>
-                                                                            <Value>Punto de Venta:</Value>
-                                                                            <Style>
-                                                                              <FontSize>8.5pt</FontSize>
-                                                                              <FontWeight>Bold</FontWeight>
-                                                                            </Style>
-                                                                          </TextRun>
-                                                                        </TextRuns>
-                                                                        <Style />
-                                                                      </Paragraph>
-                                                                    </Paragraphs>
-                                                                    <rd:DefaultName>Textbox226</rd:DefaultName>
-                                                                    <Style>
-                                                                      <Border>
-                                                                        <Style>None</Style>
-                                                                      </Border>
-                                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                                      <PaddingRight>2pt</PaddingRight>
-                                                                      <PaddingTop>2pt</PaddingTop>
-                                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                                    </Style>
-                                                                  </Textbox>
-                                                                </CellContents>
-                                                              </TablixCell>
-                                                              <TablixCell>
-                                                                <CellContents>
-                                                                  <Textbox Name="FEI_PDV1">
-                                                                    <CanGrow>true</CanGrow>
-                                                                    <KeepTogether>true</KeepTogether>
-                                                                    <Paragraphs>
-                                                                      <Paragraph>
-                                                                        <TextRuns>
-                                                                          <TextRun>
-                                                                            <Value>=Fields!FEI_PDV.Value</Value>
-                                                                            <Style>
-                                                                              <FontSize>8.5pt</FontSize>
-                                                                              <FontWeight>Bold</FontWeight>
-                                                                            </Style>
-                                                                          </TextRun>
-                                                                        </TextRuns>
-                                                                        <Style />
-                                                                      </Paragraph>
-                                                                    </Paragraphs>
-                                                                    <rd:DefaultName>FEI_PDV1</rd:DefaultName>
-                                                                    <Style>
-                                                                      <Border>
                                                                         <Style>None</Style>
                                                                       </Border>
                                                                       <PaddingLeft>2pt</PaddingLeft>
@@ -891,13 +842,14 @@ order by NRO_FACTURA,orden</CommandText>
                                                               </TablixCell>
                                                               <TablixCell>
                                                                 <CellContents>
-                                                                  <Textbox Name="FEI_NRO">
+                                                                  <Textbox Name="Textbox8">
+                                                                    <CanGrow>true</CanGrow>
                                                                     <KeepTogether>true</KeepTogether>
                                                                     <Paragraphs>
                                                                       <Paragraph>
                                                                         <TextRuns>
                                                                           <TextRun>
-                                                                            <Value>=Fields!FEI_NRO.Value</Value>
+                                                                            <Value>=Fields!FEI_PDV.Value+"-"+Fields!FEI_NRO.Value</Value>
                                                                             <Style>
                                                                               <FontSize>8.5pt</FontSize>
                                                                               <FontWeight>Bold</FontWeight>
@@ -907,7 +859,7 @@ order by NRO_FACTURA,orden</CommandText>
                                                                         <Style />
                                                                       </Paragraph>
                                                                     </Paragraphs>
-                                                                    <rd:DefaultName>FEI_NRO</rd:DefaultName>
+                                                                    <rd:DefaultName>Textbox8</rd:DefaultName>
                                                                     <Style>
                                                                       <Border>
                                                                         <Style>None</Style>
@@ -918,8 +870,11 @@ order by NRO_FACTURA,orden</CommandText>
                                                                       <PaddingBottom>2pt</PaddingBottom>
                                                                     </Style>
                                                                   </Textbox>
+                                                                  <ColSpan>3</ColSpan>
                                                                 </CellContents>
                                                               </TablixCell>
+                                                              <TablixCell />
+                                                              <TablixCell />
                                                             </TablixCells>
                                                           </TablixRow>
                                                         </TablixRows>
@@ -949,7 +904,7 @@ order by NRO_FACTURA,orden</CommandText>
                                               </TablixCells>
                                             </TablixRow>
                                             <TablixRow>
-                                              <Height>0.48cm</Height>
+                                              <Height>0.4989cm</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
@@ -968,7 +923,7 @@ order by NRO_FACTURA,orden</CommandText>
                                                         </TablixColumns>
                                                         <TablixRows>
                                                           <TablixRow>
-                                                            <Height>0.48cm</Height>
+                                                            <Height>0.4989cm</Height>
                                                             <TablixCells>
                                                               <TablixCell>
                                                                 <CellContents>
@@ -1150,7 +1105,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1175,7 +1130,7 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -1370,7 +1325,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1395,7 +1350,7 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -1594,7 +1549,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1619,28 +1574,28 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox131">
+                                      <Textbox Name="CMPADRESS_1">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Condición frente al IVA:</Value>
+                                                <Value>=Fields!CMPADRESS_1.Value</Value>
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
+                                                  <FontWeight>Normal</FontWeight>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox128</rd:DefaultName>
+                                        <rd:DefaultName>CMPADRESS_1</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>LightGrey</Color>
@@ -1657,44 +1612,10 @@ order by NRO_FACTURA,orden</CommandText>
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <ColSpan>2</ColSpan>
                                     </CellContents>
                                   </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="COND_IVA">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=Fields!COND_IVA.Value</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>COND_IVA</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <LeftBorder>
-                                            <Style>None</Style>
-                                          </LeftBorder>
-                                          <RightBorder>
-                                            <Style>None</Style>
-                                          </RightBorder>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
+                                  <TablixCell />
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox128">
@@ -1824,6 +1745,7 @@ order by NRO_FACTURA,orden</CommandText>
                               <TablixMember />
                             </TablixMembers>
                           </TablixRowHierarchy>
+                          <DataSetName>Cabecera_FACTURA</DataSetName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1844,7 +1766,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.15875cm</Height>
+                  <Height>0.57877cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1852,39 +1774,90 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>9.84471cm</Width>
+                                <Width>3.68306cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>9.84273cm</Width>
+                                <Width>6.16164cm</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>1.23858cm</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>8.60415cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.15875cm</Height>
+                                <Height>0.57877cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox611">
+                                      <Textbox Name="Textbox131">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value />
-                                                <Style />
+                                                <Value>Condición frente al IVA:</Value>
+                                                <Style>
+                                                  <FontSize>8.5pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox611</rd:DefaultName>
+                                        <rd:DefaultName>Textbox128</rd:DefaultName>
                                         <Style>
                                           <Border>
+                                            <Color>LightGrey</Color>
                                             <Style>None</Style>
                                           </Border>
+                                          <LeftBorder>
+                                            <Style>None</Style>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Style>None</Style>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="COND_IVA">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!COND_IVA.Value</Value>
+                                                <Style>
+                                                  <FontSize>8.5pt</FontSize>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>COND_IVA</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <LeftBorder>
+                                            <Style>None</Style>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Style>None</Style>
+                                          </RightBorder>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
@@ -1913,8 +1886,42 @@ order by NRO_FACTURA,orden</CommandText>
                                             <Style>None</Style>
                                           </Border>
                                           <LeftBorder>
+                                            <Color>Black</Color>
                                             <Style>Solid</Style>
+                                            <Width>1pt</Width>
                                           </LeftBorder>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox22">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>IVA EXENTO OPERACIÓN DE EXPORTACIÓN</Value>
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1929,6 +1936,8 @@ order by NRO_FACTURA,orden</CommandText>
                           </TablixBody>
                           <TablixColumnHierarchy>
                             <TablixMembers>
+                              <TablixMember />
+                              <TablixMember />
                               <TablixMember />
                               <TablixMember />
                             </TablixMembers>
@@ -1958,319 +1967,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.15021cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox130">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox130</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Tablix Name="Tablix2">
-                          <TablixBody>
-                            <TablixColumns>
-                              <TablixColumn>
-                                <Width>4.14181cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>1.99358cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>1.35721cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>3.59068cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>4.29577cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>4.30838cm</Width>
-                              </TablixColumn>
-                            </TablixColumns>
-                            <TablixRows>
-                              <TablixRow>
-                                <Height>0.6cm</Height>
-                                <TablixCells>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="PERIODO_DESDE2">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=IIF(Fields!PERIODO_DESDE.Value &lt;&gt; "01-01-1900", "Período Facturado Desde:", Nothing)</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>PERIODO_DESDE1</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>8pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="PERIODO_DESDE1">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=IIF(Fields!PERIODO_DESDE.Value &lt;&gt; "01-01-1900", Fields!PERIODO_DESDE.Value, Nothing)</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>PERIODO_DESDE1</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="PERIODO_DESDE3">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=IIF(Fields!PERIODO_DESDE.Value &lt;&gt; "01-01-1900", "Hasta:", Nothing)</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>PERIODO_DESDE1</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="PERIODO_DESDE4">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=IIF(Fields!PERIODO_HASTA.Value &lt;&gt; "01-01-1900", Fields!PERIODO_HASTA.Value, Nothing)</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>PERIODO_DESDE1</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox69">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>Fecha de Vto. para el pago:</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox69</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>4pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="VTO_PAGO">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=IIF(Fields!VTO_PAGO.Value &lt;&gt; "01-01-1900", Fields!VTO_PAGO.Value, Fields!DUEDATE.Value)</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>VTO_PAGO</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <LeftBorder>
-                                            <Style>None</Style>
-                                          </LeftBorder>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                </TablixCells>
-                              </TablixRow>
-                            </TablixRows>
-                          </TablixBody>
-                          <TablixColumnHierarchy>
-                            <TablixMembers>
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                            </TablixMembers>
-                          </TablixColumnHierarchy>
-                          <TablixRowHierarchy>
-                            <TablixMembers>
-                              <TablixMember />
-                            </TablixMembers>
-                          </TablixRowHierarchy>
-                          <DataSetName>Cabecera_FACTURA</DataSetName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                        </Tablix>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.15021cm</Height>
+                  <Height>0.1469cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2304,7 +2001,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.61229cm</Height>
+                  <Height>0.4766cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2312,24 +2009,24 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>1.08616cm</Width>
+                                <Width>1.78613cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>5.75828cm</Width>
+                                <Width>7.62318cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>0.26579cm</Width>
+                                <Width>0.07938cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>4.18971cm</Width>
+                                <Width>1.5946cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>8.38748cm</Width>
+                                <Width>8.60414cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.61229cm</Height>
+                                <Height>0.4766cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -2339,14 +2036,16 @@ order by NRO_FACTURA,orden</CommandText>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>CUIT:</Value>
+                                                <Value>Señor(es):</Value>
                                                 <Style>
-                                                  <FontSize>8.5pt</FontSize>
+                                                  <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox211</rd:DefaultName>
@@ -2360,7 +2059,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <LeftBorder>
                                             <Style>Solid</Style>
                                           </LeftBorder>
-                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <VerticalAlign>Top</VerticalAlign>
                                           <PaddingLeft>5pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>6pt</PaddingTop>
@@ -2371,23 +2070,25 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="CLNT_CUIT2">
+                                      <Textbox Name="NOMBRE_CLIENTE">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!CLNT_CUIT.Value</Value>
+                                                <Value>=Fields!NOMBRE_CLIENTE.Value</Value>
                                                 <Style>
-                                                  <FontSize>8.5pt</FontSize>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>CLNT_CUIT2</rd:DefaultName>
+                                        <rd:DefaultName>NOMBRE_CLIENTE</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2395,9 +2096,8 @@ order by NRO_FACTURA,orden</CommandText>
                                           <TopBorder>
                                             <Style>Solid</Style>
                                           </TopBorder>
-                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <VerticalAlign>Top</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>6pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
@@ -2414,10 +2114,14 @@ order by NRO_FACTURA,orden</CommandText>
                                             <TextRuns>
                                               <TextRun>
                                                 <Value />
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>8pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -2428,6 +2132,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <TopBorder>
                                             <Style>Solid</Style>
                                           </TopBorder>
+                                          <VerticalAlign>Top</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -2438,26 +2143,26 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox278">
+                                      <Textbox Name="Textbox106">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Razon Social:</Value>
+                                                <Value>Domicilio:</Value>
                                                 <Style>
-                                                  <FontSize>8.5pt</FontSize>
+                                                  <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox277</rd:DefaultName>
+                                        <rd:DefaultName>Textbox106</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2465,6 +2170,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <TopBorder>
                                             <Style>Solid</Style>
                                           </TopBorder>
+                                          <VerticalAlign>Top</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>6pt</PaddingTop>
@@ -2475,16 +2181,16 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="NOMBRE_CLIENTE1">
+                                      <Textbox Name="CLNT_ADRESS">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!NOMBRE_CLIENTE.Value</Value>
+                                                <Value>=Fields!CLNT_ADRESS.Value</Value>
                                                 <Style>
-                                                  <FontSize>8.5pt</FontSize>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -2493,7 +2199,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>NOMBRE_CLIENTE1</rd:DefaultName>
+                                        <rd:DefaultName>CLNT_ADRESS</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2504,6 +2210,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <RightBorder>
                                             <Style>Solid</Style>
                                           </RightBorder>
+                                          <VerticalAlign>Top</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>6pt</PaddingTop>
@@ -2530,6 +2237,7 @@ order by NRO_FACTURA,orden</CommandText>
                               <TablixMember />
                             </TablixMembers>
                           </TablixRowHierarchy>
+                          <DataSetName>Cabecera_FACTURA</DataSetName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -2541,7 +2249,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2549,10 +2257,10 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.65705cm</Width>
+                                <Width>2.568cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>5.08812cm</Width>
+                                <Width>5.17717cm</Width>
                               </TablixColumn>
                               <TablixColumn>
                                 <Width>0.30432cm</Width>
@@ -2566,7 +2274,7 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -2576,7 +2284,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Condición IVA:</Value>
+                                                <Value>CUIT País:</Value>
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -2615,14 +2323,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="CLNT_IVA">
+                                      <Textbox Name="CLNT_CUIT">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!CLNT_IVA.Value</Value>
+                                                <Value>=Fields!CLNT_CUIT.Value</Value>
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
                                                 </Style>
@@ -2631,7 +2339,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>CLNT_IVA</rd:DefaultName>
+                                        <rd:DefaultName>CLNT_CUIT</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2676,23 +2384,10 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox220">
+                                      <Textbox Name="Textbox107">
+                                        <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>Domicilio Comercial:</Value>
-                                                <Style>
-                                                  <FontSize>8.5pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
@@ -2703,10 +2398,12 @@ order by NRO_FACTURA,orden</CommandText>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Right</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox219</rd:DefaultName>
+                                        <rd:DefaultName>Textbox107</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2721,14 +2418,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="CLNT_ADRESS3">
+                                      <Textbox Name="Textbox108">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!CLNT_ADRESS.Value</Value>
+                                                <Value />
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
                                                 </Style>
@@ -2739,7 +2436,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>CLNT_ADRESS3</rd:DefaultName>
+                                        <rd:DefaultName>Textbox108</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2773,6 +2470,7 @@ order by NRO_FACTURA,orden</CommandText>
                               <TablixMember />
                             </TablixMembers>
                           </TablixRowHierarchy>
+                          <DataSetName>Cabecera_FACTURA</DataSetName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -2784,7 +2482,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.58583cm</Height>
+                  <Height>0.41193cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2792,10 +2490,10 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>3.37126cm</Width>
+                                <Width>2.49863cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>5.25846cm</Width>
+                                <Width>6.13109cm</Width>
                               </TablixColumn>
                               <TablixColumn>
                                 <Width>0.2924cm</Width>
@@ -2809,7 +2507,7 @@ order by NRO_FACTURA,orden</CommandText>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.58583cm</Height>
+                                <Height>0.41193cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -2819,7 +2517,7 @@ order by NRO_FACTURA,orden</CommandText>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Condición de Venta:</Value>
+                                                <Value>ID Impositivo:</Value>
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -2850,14 +2548,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="COND_PAGO">
+                                      <Textbox Name="CLNT_IVA">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!COND_PAGO.Value</Value>
+                                                <Value>=Fields!CLNT_IVA.Value</Value>
                                                 <Style>
                                                   <FontSize>8pt</FontSize>
                                                 </Style>
@@ -2866,7 +2564,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>COND_PAGO</rd:DefaultName>
+                                        <rd:DefaultName>CLNT_IVA</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2916,14 +2614,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox294">
+                                      <Textbox Name="Textbox4">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Nro. Remito:</Value>
+                                                <Value />
                                                 <Style>
                                                   <FontSize>8.5pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -2935,7 +2633,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox294</rd:DefaultName>
+                                        <rd:DefaultName>Textbox4</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -2955,14 +2653,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="NRO_REMITO">
+                                      <Textbox Name="Textbox1">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!NRO_REMITO.Value</Value>
+                                                <Value />
                                                 <Style>
                                                   <FontSize>8pt</FontSize>
                                                 </Style>
@@ -2971,7 +2669,7 @@ order by NRO_FACTURA,orden</CommandText>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>NRO_REMITO</rd:DefaultName>
+                                        <rd:DefaultName>Textbox1</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -3023,7 +2721,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.17667cm</Height>
+                  <Height>0.07938cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3057,7 +2755,121 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.52062cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox110">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Divisa: "+First(Fields!CURNCYID.Value, "Cabecera_FACTURA")+" - " +First(Fields!curncd.Value, "Cabecera_FACTURA")</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox110</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.46771cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox111">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Destino del Comprobante: "+Fields!pais.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox111</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.12375cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox109">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox109</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3065,30 +2877,30 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.2061cm</Width>
+                                <Width>2.12728cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>7.166cm</Width>
+                                <Width>7.08718cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.71118cm</Width>
+                                <Width>1.63236cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.6305cm</Width>
+                                <Width>1.55168cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.56928cm</Width>
+                                <Width>2.76619cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.65438cm</Width>
+                                <Width>2.12728cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.74998cm</Width>
+                                <Width>2.39544cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -3302,14 +3114,14 @@ order by NRO_FACTURA,orden</CommandText>
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox98">
+                                      <Textbox Name="Textbox97">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>% Bonif</Value>
+                                                <Value>Bonificación</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -3328,6 +3140,8 @@ order by NRO_FACTURA,orden</CommandText>
                                           </Border>
                                           <BackgroundColor>Silver</BackgroundColor>
                                           <VerticalAlign>Middle</VerticalAlign>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
@@ -3401,7 +3215,7 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.48cm</Height>
+                  <Height>0.47669cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3409,30 +3223,30 @@ order by NRO_FACTURA,orden</CommandText>
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.19969cm</Width>
+                                <Width>2.13848cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>7.17241cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>1.71118cm</Width>
+                                <Width>7.07226cm</Width>
                               </TablixColumn>
                               <TablixColumn>
                                 <Width>1.6305cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.56928cm</Width>
+                                <Width>1.54982cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.65438cm</Width>
+                                <Width>2.76432cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.74998cm</Width>
+                                <Width>2.13848cm</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>2.39358cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.48cm</Height>
+                                <Height>0.47669cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -3610,15 +3424,15 @@ order by NRO_FACTURA,orden</CommandText>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!MRKDNAMT.Value/IIf(Fields!UNITPRCE.Value = 0 ,1, Fields!UNITPRCE.Value) *100</Value>
+                                                <Value>=Fields!MRKDNAMT.Value</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
-                                                  <Format>#,0.00</Format>
+                                                  <Format>0.00;(0.00)</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Center</TextAlign>
+                                              <TextAlign>Right</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -3703,11 +3517,11 @@ order by NRO_FACTURA,orden</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.17667cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox16">
+                        <Textbox Name="Textbox94">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -3715,18 +3529,57 @@ order by NRO_FACTURA,orden</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <rd:DefaultName>Textbox94</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.41479cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TRDISAMT">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Descuento: "+FormatNumber(Fields!ORTDISAM.Value,2)</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TRDISAMT</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Fields!ORTDISAM.Value&gt;0,false,true)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <Border>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -3818,7 +3671,16 @@ order by NRO_FACTURA,orden</CommandText>
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                        </TablixMember>
+                        <TablixMember>
                           <Group Name="Detalles" />
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
+                        </TablixMember>
+                        <TablixMember>
+                          <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
                           <KeepWithGroup>Before</KeepWithGroup>
@@ -3831,7 +3693,7 @@ order by NRO_FACTURA,orden</CommandText>
             </TablixRowHierarchy>
             <DataSetName>Cabecera_FACTURA</DataSetName>
             <Top>0.15875cm</Top>
-            <Height>9.05029cm</Height>
+            <Height>8.99613cm</Height>
             <Width>19.68743cm</Width>
             <Style>
               <Border>
@@ -3840,14 +3702,14 @@ order by NRO_FACTURA,orden</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.95632in</Height>
+        <Height>3.62512in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>7.85798in</Width>
+      <Width>7.93038in</Width>
       <Page>
         <PageHeader>
           <Height>0.02646cm</Height>
@@ -3860,45 +3722,12 @@ order by NRO_FACTURA,orden</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>10.94784cm</Height>
+          <Height>4.80951cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Rectangle Name="Rectangle10">
               <ReportItems>
-                <Textbox Name="Textbox105">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Subtotal:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>1.18571cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
                 <Textbox Name="IMPORTE_TOTAL">
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
@@ -3919,1066 +3748,10 @@ order by NRO_FACTURA,orden</CommandText>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>IMPORTE_TOTAL</rd:DefaultName>
-                  <Top>5.89267cm</Top>
+                  <Top>0.59042cm</Top>
                   <Left>16.75229cm</Left>
                   <Height>0.48386cm</Height>
                   <Width>2.58631cm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA21">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_21.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.72845cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>2</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox116">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Otros Tributos</Value>
-                          <Style>
-                            <FontSize>9pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>0.44404cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>3</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox118">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Per./Ret. de Impuesto a las ganancias</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>1.41176cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>4</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox119">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Per./Ret. de IVA</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>1.89562cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>5</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox120">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Per./Ret. de Ingresos Brutos</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>2.37948cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>6</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox121">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Impuestos Internos</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>2.86334cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>7</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox122">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Impuestos Municipales</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>3.3472cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>8</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox123">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Descripción</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>0.9279cm</Top>
-                  <Left>0.24086cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>9</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                    <BackgroundColor>LightGrey</BackgroundColor>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox124">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Detalle</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>0.9279cm</Top>
-                  <Left>5.33378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.7411cm</Width>
-                  <ZIndex>10</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                    <BackgroundColor>LightGrey</BackgroundColor>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox125">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Alíc. %</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Normal</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>0.9279cm</Top>
-                  <Left>8.07488cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>1.3078cm</Width>
-                  <ZIndex>11</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                    <BackgroundColor>LightGrey</BackgroundColor>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="SUBTOTAL2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Importe</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>SUBTOTAL</rd:DefaultName>
-                  <Top>0.9279cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>12</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                    <BackgroundColor>LightGrey</BackgroundColor>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox126">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Importe Otros tributos:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox106</rd:DefaultName>
-                  <Top>3.86634cm</Top>
-                  <Left>4.27918cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>5.09292cm</Width>
-                  <ZIndex>13</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA10">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_10.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.24406cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>14</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA27">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_27.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.21637cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>15</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_DISCR4">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_05.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>IMPUESTO_DISCR</rd:DefaultName>
-                  <Top>3.7632cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>16</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_DISCR5">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_02.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>IMPUESTO_DISCR</rd:DefaultName>
-                  <Top>4.25235cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>17</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_DISCR6">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_IVA_00.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>IMPUESTO_DISCR</rd:DefaultName>
-                  <Top>4.76267cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>18</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA22">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!PERC_IVA.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.89562cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>19</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA23">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!PERC_IIBB.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.37948cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>20</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA24">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!RET_GANAN.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.41176cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>21</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA25">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_INTERNO.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.86334cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>22</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA26">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!PERC_IVA.Value, "Cabecera_FACTURA")+First(Fields!PERC_IIBB.Value, "Cabecera_FACTURA")+First(Fields!RET_GANAN.Value, "Cabecera_FACTURA")+First(Fields!IMP_INTERNO.Value, "Cabecera_FACTURA")+First(Fields!IMP_MUNICIPAL.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.86634cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>23</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA28">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!PERC_IVA.Value, "Cabecera_FACTURA") + First(Fields!PERC_IIBB.Value, "Cabecera_FACTURA") + First(Fields!RET_GANAN.Value, "Cabecera_FACTURA") + First(Fields!IMP_INTERNO.Value, "Cabecera_FACTURA") + First(Fields!IMP_MUNICIPAL.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>5.27475cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>24</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox106">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 27%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>2.21637cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>25</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox107">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 21%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>2.72845cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>26</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox108">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 10.5%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>3.24406cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>27</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox109">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 5%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>3.7632cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>28</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox110">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 2.5%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>4.25235cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>29</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox111">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>IVA 0%:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>4.76267cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>30</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox112">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Importe Otros Tributos:  $</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>5.27475cm</Top>
-                  <Left>12.85378cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>31</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA29">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!IMP_MUNICIPAL.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>3.3472cm</Top>
-                  <Left>9.38268cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>32</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4995,7 +3768,7 @@ order by NRO_FACTURA,orden</CommandText>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Importe Total:  $</Value>
+                          <Value>="Importe Total: "+Fields!CURNCYID.Value</Value>
                           <Style>
                             <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
@@ -5008,11 +3781,11 @@ order by NRO_FACTURA,orden</CommandText>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>5.89267cm</Top>
+                  <Top>0.59042cm</Top>
                   <Left>12.85378cm</Left>
                   <Height>0.48386cm</Height>
                   <Width>3.94827cm</Width>
-                  <ZIndex>33</ZIndex>
+                  <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -5023,50 +3796,54 @@ order by NRO_FACTURA,orden</CommandText>
                     <PaddingBottom>1pt</PaddingBottom>
                   </Style>
                 </Textbox>
-                <Textbox Name="IMPUESTO_IVA30">
+                <Textbox Name="Textbox7">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!SUBTOTAL.Value, "Cabecera_FACTURA")</Value>
+                          <Value>="Tipo de Cambio: "+Str(Fields!XCHGRATE.Value)</Value>
                           <Style>
-                            <FontSize>8.5pt</FontSize>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
+                            <TextDecoration>Underline</TextDecoration>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Right</TextAlign>
+                        <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.18571cm</Top>
-                  <Left>16.80205cm</Left>
+                  <rd:DefaultName>Textbox7</rd:DefaultName>
+                  <Top>0.17767cm</Top>
+                  <Left>0.15705cm</Left>
                   <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>34</ZIndex>
+                  <Width>5.35734cm</Width>
+                  <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
-                <Textbox Name="Textbox129">
+                <Textbox Name="curncd">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Descuento Comercial:  $</Value>
+                          <Value>="Divisa: "+First(Fields!CURNCYID.Value, "Cabecera_FACTURA")+" - " +First(Fields!curncd.Value, "Cabecera_FACTURA")</Value>
                           <Style>
-                            <FontSize>8.5pt</FontSize>
+                            <FontSize>9pt</FontSize>
                             <FontWeight>Bold</FontWeight>
+                            <TextDecoration>Underline</TextDecoration>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -5075,61 +3852,27 @@ order by NRO_FACTURA,orden</CommandText>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <rd:DefaultName>Textbox105</rd:DefaultName>
-                  <Top>1.6853cm</Top>
-                  <Left>12.85378cm</Left>
+                  <rd:DefaultName>curncd</rd:DefaultName>
+                  <Top>0.17767cm</Top>
+                  <Left>12.86737cm</Left>
                   <Height>0.48386cm</Height>
-                  <Width>3.94827cm</Width>
-                  <ZIndex>35</ZIndex>
+                  <Width>6.47123cm</Width>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="IMPUESTO_IVA31">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!TRDISAMT.Value, "Cabecera_FACTURA")</Value>
-                          <Style>
-                            <FontSize>8.5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Format>#,0.00;(#,0.00)</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.6853cm</Top>
-                  <Left>16.78757cm</Left>
-                  <Height>0.48386cm</Height>
-                  <Width>2.55103cm</Width>
-                  <ZIndex>36</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>1pt</PaddingLeft>
-                    <PaddingRight>1pt</PaddingRight>
-                    <PaddingTop>1pt</PaddingTop>
-                    <PaddingBottom>1pt</PaddingBottom>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.07577cm</Top>
-              <Height>7.28345cm</Height>
-              <Width>19.6915cm</Width>
+              <Top>0.3175cm</Top>
+              <Height>1.29653cm</Height>
+              <Width>19.68743cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -5154,7 +3897,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>7.7716cm</Top>
+              <Top>1.7391cm</Top>
               <Left>9.26518cm</Left>
               <Height>0.6cm</Height>
               <Width>0.49581cm</Width>
@@ -5183,7 +3926,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>OverallTotalPages</rd:DefaultName>
-              <Top>7.7716cm</Top>
+              <Top>1.7391cm</Top>
               <Left>10.07128cm</Left>
               <Height>0.6cm</Height>
               <Width>0.55325cm</Width>
@@ -5213,7 +3956,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox114</rd:DefaultName>
-              <Top>7.60227cm</Top>
+              <Top>1.56977cm</Top>
               <Left>15.1072cm</Left>
               <Height>0.6cm</Height>
               <Width>1.4404cm</Width>
@@ -5246,7 +3989,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox115</rd:DefaultName>
-              <Top>7.7716cm</Top>
+              <Top>1.7391cm</Top>
               <Left>9.81701cm</Left>
               <Height>0.6cm</Height>
               <Width>0.2772cm</Width>
@@ -5273,7 +4016,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>FEI_CAE</rd:DefaultName>
-              <Top>7.60227cm</Top>
+              <Top>1.56977cm</Top>
               <Left>16.64462cm</Left>
               <Height>0.6cm</Height>
               <Width>3.04083cm</Width>
@@ -5307,7 +4050,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox114</rd:DefaultName>
-              <Top>8.17052cm</Top>
+              <Top>2.13802cm</Top>
               <Left>12.4651cm</Left>
               <Height>0.6cm</Height>
               <Width>4.0825cm</Width>
@@ -5338,7 +4081,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>FEI_CAE_DUE</rd:DefaultName>
-              <Top>8.17052cm</Top>
+              <Top>2.13802cm</Top>
               <Left>16.64462cm</Left>
               <Height>0.6cm</Height>
               <Width>3.04084cm</Width>
@@ -5357,7 +4100,7 @@ order by NRO_FACTURA,orden</CommandText>
               <Source>Embedded</Source>
               <Value>afip1</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>7.66577cm</Top>
+              <Top>1.63327cm</Top>
               <Left>0.08832cm</Left>
               <Height>0.93778cm</Height>
               <Width>3.35949cm</Width>
@@ -5391,7 +4134,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
-              <Top>7.82805cm</Top>
+              <Top>1.79555cm</Top>
               <Left>3.58204cm</Left>
               <Height>0.6cm</Height>
               <Width>4.07408cm</Width>
@@ -5423,7 +4166,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
-              <Top>8.67412cm</Top>
+              <Top>2.64162cm</Top>
               <Left>0.01688cm</Left>
               <Height>0.39688cm</Height>
               <Width>10.68252cm</Width>
@@ -5452,7 +4195,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox115</rd:DefaultName>
-              <Top>7.7716cm</Top>
+              <Top>1.7391cm</Top>
               <Left>8.24578cm</Left>
               <Height>0.6cm</Height>
               <Width>0.97707cm</Width>
@@ -5482,7 +4225,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>9.24739cm</Top>
+              <Top>3.21489cm</Top>
               <Left>0.43199cm</Left>
               <Height>0.97169cm</Height>
               <Width>8.50518cm</Width>
@@ -5511,7 +4254,7 @@ order by NRO_FACTURA,orden</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>10.26846cm</Top>
+              <Top>4.23596cm</Top>
               <Left>0.43199cm</Left>
               <Height>0.46771cm</Height>
               <Width>8.50518cm</Width>
@@ -5531,10 +4274,10 @@ order by NRO_FACTURA,orden</CommandText>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>0.5cm</LeftMargin>
-        <RightMargin>0.5cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1.5cm</BottomMargin>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style>
           <Border>
