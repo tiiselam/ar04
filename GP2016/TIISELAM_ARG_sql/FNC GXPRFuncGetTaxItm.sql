@@ -1,8 +1,11 @@
-USE [TIISA]
 GO
-
 /****** Object:  UserDefinedFunction [dbo].[GXPRFuncGetTaxItm]    Script Date: 16/08/2018 11:57:20 ******/
 SET ANSI_NULLS ON
+GO
+
+if exists (select * from dbo.sysobjects where name = 'GXPRFuncGetTaxItm' and type = 'FN') 
+	
+DROP FUNCTION GXPRFuncGetTaxItm
 GO
 
 SET QUOTED_IDENTIFIER ON
