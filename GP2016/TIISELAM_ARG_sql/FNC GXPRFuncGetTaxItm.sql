@@ -21,18 +21,11 @@ RETURNS decimal(10,2)
 AS
 BEGIN
 	DECLARE @TaxImport decimal(10,2)
-	SELECT @TaxImport=--sum(convert(decimal(10,2),
-	                                        Substring(A.TAXDTLID
-                                                      ,charindex('V-IV-',A.TAXDTLID,1)+5
-								   				      ,charindex('%',A.TAXDTLID,1) 
-														 - (charindex('V-IV-',A.TAXDTLID,1)+5))
-						--				              )
-                        --          )
+	SELECT @TaxImport=SUM(convert(decimal(3,1),Substring(A.TAXDTLID,charindex('V-IV-',A.TAXDTLID,1)+5,6) ))
 	FROM SOP10105 A
 	WHERE A.SOPTYPE = @INSopType
 	  AND A.SOPNUMBE = @INSopNumbe
-	  AND A.TAXDTLID LIKE '%'+ rtrim('V-IV-')+'%'
-	  AND A.TAXDTLID NOT LIKE '%EXENTO%'
+	  AND A.TAXDTLID LIKE '%'+ rtrim('V-IV-')+'%' AND A.TAXDTLID NOT LIKE '%EXENTO%'
 	  AND A.LNITMSEQ = @INLnItmSeq
 RETURN (@TaxImport)
 END
