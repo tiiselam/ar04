@@ -5,7 +5,6 @@ GO
 
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[GXPR_FC_ELECTRONICA_EXP]') and OBJECTPROPERTY(id, N'IsView') = 1) 
 drop view [dbo].[GXPR_FC_ELECTRONICA_EXP]
-
 GO
 
 
