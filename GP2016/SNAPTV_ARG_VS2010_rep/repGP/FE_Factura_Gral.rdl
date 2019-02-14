@@ -101,7 +101,6 @@
                                                 <Image Name="Image2">
                                                   <Source>External</Source>
                                                   <Value>=Fields!FileName.Value</Value>
-                                                  <Sizing>FitProportional</Sizing>
                                                   <Style>
                                                     <Border>
                                                       <Style>None</Style>
@@ -5192,7 +5191,7 @@
           <Top>9.24739cm</Top>
           <Left>0.43199cm</Left>
           <Height>0.97169cm</Height>
-          <Width>8.50518cm</Width>
+          <Width>16.37006cm</Width>
           <ZIndex>12</ZIndex>
           <Style>
             <Border>

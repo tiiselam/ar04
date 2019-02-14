@@ -101,7 +101,6 @@
                                                 <Image Name="Image2">
                                                   <Source>External</Source>
                                                   <Value>=Fields!FileName.Value</Value>
-                                                  <Sizing>FitProportional</Sizing>
                                                   <Style>
                                                     <Border>
                                                       <Style>None</Style>
@@ -3919,8 +3918,8 @@
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>3.21489cm</Top>
           <Left>0.43199cm</Left>
-          <Height>0.97169cm</Height>
-          <Width>8.50518cm</Width>
+          <Height>0.95933cm</Height>
+          <Width>16.85998cm</Width>
           <ZIndex>12</ZIndex>
           <Style>
             <Border>
@@ -3946,9 +3945,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>4.23596cm</Top>
+          <Top>4.28006cm</Top>
           <Left>0.43199cm</Left>
-          <Height>0.46771cm</Height>
+          <Height>0.42361cm</Height>
           <Width>8.50518cm</Width>
           <ZIndex>13</ZIndex>
           <Style>
@@ -3991,7 +3990,7 @@
     <DataSource Name="GP">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>="Data Source=CL-sandbox-dyna;Initial Catalog="+ Parameters!BASE.Value+";Integrated Security=True"</ConnectString>
+        <ConnectString>="Data Source=CL-GP2016;Initial Catalog="+ Parameters!BASE.Value+";Integrated Security=True"</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
