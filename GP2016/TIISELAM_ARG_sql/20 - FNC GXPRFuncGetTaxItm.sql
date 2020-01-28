@@ -1,11 +1,9 @@
-GO
-/****** Object:  UserDefinedFunction [dbo].[GXPRFuncGetTaxItm]    Script Date: 16/08/2018 11:57:20 ******/
-SET ANSI_NULLS ON
+/****** Object:  UserDefinedFunction [dbo].[GXPRFuncGetTaxItm]    Script Date: 28/01/2020 15:02:45 ******/
+DROP FUNCTION [dbo].[GXPRFuncGetTaxItm]
 GO
 
-if exists (select * from dbo.sysobjects where name = 'GXPRFuncGetTaxItm' and type = 'FN') 
-	
-DROP FUNCTION GXPRFuncGetTaxItm
+/****** Object:  UserDefinedFunction [dbo].[GXPRFuncGetTaxItm]    Script Date: 28/01/2020 15:02:45 ******/
+SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
@@ -21,11 +19,18 @@ RETURNS decimal(10,2)
 AS
 BEGIN
 	DECLARE @TaxImport decimal(10,2)
-	SELECT @TaxImport=SUM(convert(decimal(3,1),Substring(A.TAXDTLID,charindex('V-IV-',A.TAXDTLID,1)+5,6) ))
+	SELECT @TaxImport=--sum(convert(decimal(10,2),
+	                                        Substring(A.TAXDTLID
+                                                      ,charindex('V-IV-',A.TAXDTLID,1)+5
+								   				      ,charindex('%',A.TAXDTLID,1) 
+														 - (charindex('V-IV-',A.TAXDTLID,1)+5))
+						--				              )
+                        --          )
 	FROM SOP10105 A
 	WHERE A.SOPTYPE = @INSopType
 	  AND A.SOPNUMBE = @INSopNumbe
-	  AND A.TAXDTLID LIKE '%'+ rtrim('V-IV-')+'%' AND A.TAXDTLID NOT LIKE '%EXENTO%'
+	  AND A.TAXDTLID LIKE '%'+ rtrim('V-IV-')+'%'
+	  AND A.TAXDTLID NOT LIKE '%EXENTO%'
 	  AND A.LNITMSEQ = @INLnItmSeq
 RETURN (@TaxImport)
 END
