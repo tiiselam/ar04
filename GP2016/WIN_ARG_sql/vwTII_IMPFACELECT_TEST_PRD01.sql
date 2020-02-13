@@ -1,8 +1,10 @@
+/****** Object:  View [dbo].[vwTII_IMPFACELECT_TEST_PRD01]    Script Date: 2/13/2020 11:10:56 AM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 
@@ -501,9 +503,8 @@ ALTER view [dbo].[vwTII_IMPFACELECT_TEST_PRD01] as
 						WHERE	SP105.SOPTYPE = SP303.SOPTYPE 
 							AND SP105.SOPNUMBE = SP303.SOPNUMBE 
 							AND SP105.LNITMSEQ = 0 
-							AND SP105.TAXDTLID IN	(
-													'V-PIIBB TU', 'V-PIIBB TU 3.5%', 'V-PIIBB TU PREF'
-													) 
+							AND ( SP105.TAXDTLID IN	('V-PIIBB TU', 'V-PIIBB TU 3.5%', 'V-PIIBB TU PREF')  or
+							      SP105.TAXDTLID like 'V-PIIBB TU%')
  
 						) , 0 
 					)	
@@ -515,9 +516,8 @@ ALTER view [dbo].[vwTII_IMPFACELECT_TEST_PRD01] as
 						WHERE	SP105.SOPTYPE = SP303.SOPTYPE 
 							AND SP105.SOPNUMBE = SP303.SOPNUMBE 
 							AND SP105.LNITMSEQ = 0 
-							AND SP105.TAXDTLID IN	(
-													'V-PIIBB TU', 'V-PIIBB TU 3.5%', 'V-PIIBB TU PREF'
-													) 
+							AND ( SP105.TAXDTLID IN	('V-PIIBB TU', 'V-PIIBB TU 3.5%', 'V-PIIBB TU PREF')  or
+							      SP105.TAXDTLID like 'V-PIIBB TU%')
  
 						) , 0 
 					)			END 						PRCIIBB_TUC
@@ -581,4 +581,7 @@ ALTER view [dbo].[vwTII_IMPFACELECT_TEST_PRD01] as
 
 
 
+
 GO
+
+
